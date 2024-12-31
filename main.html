@@ -1,61 +1,18 @@
+//HTML//
+
 <!DOCTYPE html>
-<html lang="en">
+html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorted Articles</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    ul {
-      list-style-type: square;
-    }
-  </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Sorted Articles</h1>
-  <ul id="band"></ul>
+    <ul id="bands">
+        <!-- List will be populated by JS -->
+    </ul>
 
-  <script>
-    const articles = [
-      "The Bled",
-      "Anywhere But Here",
-      "Counterparts",
-      "The Devil Wears Prada",
-      "The Midway State",
-      "Norma Jean",
-      "Oh, Sleeper",
-      "An Old Dog",
-      "Pierce the Veil",
-      "The Plot in You",
-      "Say Anything"
-    ];
-
-    function removeArticles(title) {
-      return title.replace(/^(a |an |the )/i, "").trim();
-    }
-
-    function sortArticles(titles) {
-      return titles.sort((a, b) => {
-        const titleA = removeArticles(a).toLowerCase();
-        const titleB = removeArticles(b).toLowerCase();
-        return titleA.localeCompare(titleB);
-      });
-    }
-
-    function displaySortedArticles() {
-      const sortedTitles = sortArticles(articles);
-      const ulElement = document.getElementById("band");
-
-      sortedTitles.forEach(title => {
-        const li = document.createElement("li");
-        li.textContent = title;
-        ulElement.appendChild(li);
-      });
-    }
-
-    displaySortedArticles();
-  </script>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
+
 </html>
